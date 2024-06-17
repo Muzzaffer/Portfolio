@@ -1,0 +1,21 @@
+body {
+    overflow: auto; /* Allow scrolling */
+    background: url('https://community.tatsu.gg/uploads/monthly_2021_01/ShapesBackground.gif.e77deac2da454ff7c9b2fd4e180429cc.gif') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #000;
+    color: white;
+    height: 100vh; /* Ensures full viewport height */
+  }
+  .profile-img {
+    max-width: 200px;
+    border-radius: 50%;
+  }
+  .jumbotron {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    color: white;
+    padding: 2rem;
+  }
+  .card {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for cards */
+    color: white;
+  }
