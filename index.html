@@ -8,6 +8,22 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Custom CSS -->
   <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes cardHover {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.05);
+      }
+    }
     body {
       overflow: auto; /* Allow scrolling */
       background: url('https://community.tatsu.gg/uploads/monthly_2021_01/ShapesBackground.gif.e77deac2da454ff7c9b2fd4e180429cc.gif') no-repeat center center fixed;
@@ -24,18 +40,65 @@
       background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
       color: white;
       padding: 2rem;
+      animation: fadeIn 2s ease-in-out;
     }
     .card {
       background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for cards */
       color: white;
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
+    .card:hover {
+      animation: cardHover 0.3s forwards;
+    }
+    .card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+    }
+    #telesure:before {
+      background-image: url('https://media.licdn.com/dms/image/D4D0BAQEisqbrpuqtqg/company-logo_200_200/0/1701348689102/telesure_investment_holdings_logo?e=1727308800&v=beta&t=_duyPhotPZ8yTlLfpLzXqVTGD3fJXyNtHFw8j1BzqMs');
+    }
+    #mecer:before {
+      background-image: url('https://media.licdn.com/dms/image/C4E0BAQEBS6PVBXA3iA/company-logo_100_100/0/1630606540632/mecerinter_ed_logo?e=1727308800&v=beta&t=LQKZ8GpSjBaqGbsNgdvM99U7OmB6U3CsLvV5Oz92YL4');
+    }
+    #vzap:before {
+      background-image: url('https://media.licdn.com/dms/image/C4D0BAQHVr6wJgh8qVA/company-logo_100_100/0/1630565933827?e=1727308800&v=beta&t=c3wBl2JGpMTAqIa3j0bbNE91QXDea7wecAZc15i77nM');
+    }
+    .card-body {
+      position: relative;
+      z-index: 1;
+    }
+    section {
+      animation: fadeIn 2s ease-in-out;
+    }
+    .experience-item {
+  margin-bottom: 20px;
+}
+
+.experience-img {
+  width: 100%;
+  height: 100px; /* Adjust the height as per your design */
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
   </style>
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">About Me </a>
+    <a class="navbar-brand" href="#">About Me</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -51,6 +114,12 @@
             <a class="nav-link" href="#languages">Programming Languages</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="#xp">Xp</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#cert">Certification</a>
+    </li>
+        <li class="nav-item">
           <a class="nav-link" href="#games">Favorite Games</a>
         </li>
       </ul>
@@ -65,12 +134,14 @@
       <h1 class="display-4">Muzzaffer Khan</h1>
       <p class="lead">Passionate gamer and web developer</p>
       <hr class="my-4">
-      <p>Hi there! Welcome to my profile site. I love exploring new worlds in video games and creating awesome websites.</p>
+      <p>Hi there! Welcome to my gaming profile site. I love exploring new worlds in video games and creating awesome websites.</p>
     </div>
+    <br>
 
     <!-- About Section -->
     <section id="about" class="mb-4">
       <h2 class="text-center">About Me</h2>
+      <br>
       <p class="text-center">I am a young, passionate software developer who specializes in the design and deployment of Java and C# based applications. I have partial programming knowledge in HTML5 , CSS, JavaScript and SQL as well.
 
         I have technical experience in Analysis, Design, and Development, Debugging, Support, Integration, Maintenance, Enhancements and Testing of Java Applications
@@ -83,72 +154,163 @@
         
         Experience in Relational Database design and SQL</p>
     </section>
+    <br>
 
     <!-- Strengths -->
     <section id="languages">
         <h2 class="text-center mb-4">Strengths</h2>
+        <br>
         <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4"style="text-align: center;">
+          <div class="col-lg-4 col-md-6 mb-4" style="text-align: center;">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title" >C#</h5>
-                <!-- <p class="card-text" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4"style="text-align: center;">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title" >Java</h5>
-                <!-- <p class="card-text" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4"style="text-align: center;">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title" >SQL</h5>
-                <!-- <p class="card-text" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4"style="text-align: center;">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title" >DevOps</h5>
-                <!-- <p class="card-text" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4"style="text-align: center;">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title" >Angular</h5>
-                <!-- <p class="card-text" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                <h5 class="card-title">C#</h5>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mb-4" style="text-align: center;">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title" >HTML & CSS</h5>
-                <!-- <p class="card-text" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                <h5 class="card-title">Java</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4" style="text-align: center;">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">SQL</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4" style="text-align: center;">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">DevOps</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4" style="text-align: center;">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Angular</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4" style="text-align: center;">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">HTML & CSS</h5>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+    <!-- Experience -->
+     <br>
+<section id="xp">
+  <h2 class="text-center mb-4">Experience</h2>
+  <br>
+  <div class="row">
+    <div class="col-lg-12 mb-4">
+      <div class="row experience-item">
+        <div class="col-md-3">
+          <img src="https://media.licdn.com/dms/image/D4D0BAQEisqbrpuqtqg/company-logo_200_200/0/1701348689102/telesure_investment_holdings_logo?e=1727308800&v=beta&t=_duyPhotPZ8yTlLfpLzXqVTGD3fJXyNtHFw8j1BzqMs" alt="Telesure Investment Holdings Logo" class="experience-img">
+        </div>
+        <div class="col-md-9">
+          <h5>Telesure Investment Holdings</h5>
+          <p><strong>Developer</strong></p>
+          <p>Nov 2022 - Present · 1 yr 8 months</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12 mb-4">
+      <div class="row experience-item">
+        <div class="col-md-3">
+          <img src="https://media.licdn.com/dms/image/C4E0BAQEBS6PVBXA3iA/company-logo_100_100/0/1630606540632/mecerinter_ed_logo?e=1727308800&v=beta&t=LQKZ8GpSjBaqGbsNgdvM99U7OmB6U3CsLvV5Oz92YL4" alt="Mecer Inter-Ed Logo" class="experience-img">
+        </div>
+        <div class="col-md-9">
+          <h5>Mecer Inter-Ed</h5>
+          <p><strong>Java Software Developer Intern</strong></p>
+          <p>Aug 2022 - Nov 2023 · 1 yr 4 months</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12 mb-4">
+      <div class="row experience-item">
+        <div class="col-md-3">
+          <img src="https://media.licdn.com/dms/image/C4D0BAQHVr6wJgh8qVA/company-logo_100_100/0/1630565933827?e=1727308800&v=beta&t=c3wBl2JGpMTAqIa3j0bbNE91QXDea7wecAZc15i77nM" alt="VZAP Logo" class="experience-img">
+        </div>
+        <div class="col-md-9">
+          <h5>VZAP | Van Zyl & Pritchard</h5>
+          <p><strong>Software Engineering Student</strong></p>
+          <p>Feb 2021 - Aug 2022 · 1 yr 7 months</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<br>
+
+    <!-- Certification and studies Section -->
+    <section id="cert">
+      <h2 class="text-center mb-4">Certification and Studies</h2>
+      <br>
+      <div class="row" >
+        <div class="col-lg-4 col-md-6 mb-4" style="align-items: center;">
+          <!-- <img src="https://media.licdn.com/dms/image/D4E0BAQHYCgYovUuPtQ/company-logo_100_100/0/1665755678957/oracle_logo?e=1727308800&v=beta&t=VUQkRUXdGKuDDBn3GGlMqyDi23pLuzNXE0wnKxQjaDM class="card-img-top" alt="Game 3"> -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=5F1E0024F8E88C06C579A9077297A80232D29B5C41F8C9C0D6E08EC5CBF552F2" target="_blank" style="color: white;">Oracle Certified Associate</a>
+              </h5>
+              <p class="card-text">Java SE 8 Programmer has demonstrated knowledge of object-oriented concepts, the Java programming language and general knowledge of Java platforms and technologies</p>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <!-- <img src="https://media.licdn.com/dms/image/C4D0BAQEgJnUP09rW9w/company-logo_100_100/0/1674543275863/unisa_logo?e=1727308800&v=beta&t=gVTkq0o5AZ7MgD69HH5omaPv0nNQeBGER6DrBaDoF8g" class="card-img-top" alt="Game 3"> -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">University of South Africa/Universiteit van Suid-Afrika</h5>
+              <br>
+              <p class="card-text">Currently enrolled in Bachelor of Science in Computing (COM) at UNISA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <!-- <img src="https://media.licdn.com/dms/image/C4D0BAQEgJnUP09rW9w/company-logo_100_100/0/1674543275863/unisa_logo?e=1727308800&v=beta&t=gVTkq0o5AZ7MgD69HH5omaPv0nNQeBGER6DrBaDoF8g" class="card-img-top" alt="Game 3"> -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Mecer Inter-Ed</h5>
+              <br>
+              <p class="card-text">Java SE8 Programming <br>Java Enterprise Edition <br>DevOps Fundamentals <br>Business Process Management</p>
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    <br>
+
     <!-- Favorite Games Section -->
     <section id="games">
         <h2 class="text-center mb-4">Favorite Games</h2>
+        <br>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
             <img src="https://th.bing.com/th/id/R.0e5a376c0bf88bf7247730f03fd30851?rik=8V4ixNdu5uxe0w&pid=ImgRaw&r=0" class="card-img-top" alt="Game 3">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title" >Apex Legends</h5>
-                <p class="card-text" >Apex Legends is a free-to-play hero shooter game where legendary competitors battle for glory, fame, and fortune on the fringes of the Frontier.</p>
+                <h5 class="card-title">Apex Legends</h5>
+                <p class="card-text">Apex Legends is a free-to-play hero shooter game where legendary competitors battle for glory, fame, and fortune on the fringes of the Frontier.</p>
               </div>
             </div>
           </div>
@@ -156,8 +318,8 @@
             <img src="https://easycdn.es/1/imagenes/elden-ring-pc_338378.jpg" class="card-img-top" alt="Game 3">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title" >Elden Ring</h5>
-                <p class="card-text" >Elden Ring is a 2022 action role-playing game developed by FromSoftware. It was directed by Hidetaka Miyazaki and fantasy writer George R. R. Martin.</p>
+                <h5 class="card-title">Elden Ring</h5>
+                <p class="card-text">Elden Ring is a 2022 action role-playing game developed by FromSoftware. It was directed by Hidetaka Miyazaki and fantasy writer George R. R. Martin.</p>
               </div>
             </div>
           </div>
@@ -165,8 +327,8 @@
             <img src="https://sm.pcmag.com/t/pcmag_uk/review/f/forza-hori/forza-horizon-5-for-xbox-series-s_k5zc.3840.jpg" class="card-img-top" alt="Game 3">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title" >Forza Horizon</h5>
-                <p class="card-text" >Forza Horizon 5 is an open world racing game developed by Playground Games with the assistance of Turn 10 Studios and published by Xbox Game Studios</p>
+                <h5 class="card-title">Forza Horizon</h5>
+                <p class="card-text">Forza Horizon 5 is an open world racing game developed by Playground Games with the assistance of Turn 10 Studios and published by Xbox Game Studios</p>
               </div>
             </div>
           </div>
@@ -178,14 +340,5 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
-  <!-- Custom JavaScript for moving background -->
-  <!-- <script>
-    $(document).mousemove(function(e) {
-      var moveX = (e.pageX * -1/12);
-      var moveY = (e.pageY * -1/12);
-      $('body').css('background-position', moveX + 'px ' + moveY + 'px');
-    });
-  </script> -->
 </body>
 </html>
